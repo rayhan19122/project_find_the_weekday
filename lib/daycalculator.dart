@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DayCalc extends StatefulWidget{
   const DayCalc({super.key});
@@ -12,7 +13,7 @@ class _DayCalcState extends State<DayCalc>{
   final _formKey = GlobalKey<FormState>();
 
   void calcDay(){
-    DateTime date = DateTime.parse(dateController.text);
+
   }
 
   @override
@@ -46,7 +47,7 @@ class _DayCalcState extends State<DayCalc>{
                       ),
                     ),
                     validator: (value){
-                      if(value!.isEmpty){
+                      if(value == null || value.trim().isEmpty){
                         return 'Please Enter Date';
                       }
                       return null;
@@ -57,6 +58,7 @@ class _DayCalcState extends State<DayCalc>{
 
                   SizedBox(
                     height: 56,
+                    width: double.infinity,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.deepPurpleAccent,
@@ -75,6 +77,7 @@ class _DayCalcState extends State<DayCalc>{
                       ),
                     ),
                   ),
+
                 ],
               ),
             ),
